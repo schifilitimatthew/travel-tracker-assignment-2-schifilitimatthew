@@ -51,7 +51,7 @@ class TravelTrackerApp(App):
                                                                                            place[COUNTRY_INDEX],
                                                                                            place[PRIORITY_INDEX])),
                                          id=str(place))
-                if place[3] == "v":
+                if place[3] == "n":
                     temp_button = Button(background_color=NOT_VISITED_COLOUR,
                                          text=str("{} in {}, priority {}".format(place[CITY_INDEX],
                                                                                  place[COUNTRY_INDEX],
@@ -61,7 +61,8 @@ class TravelTrackerApp(App):
                 temp_button.place = place
                 self.root.ids.places.addwidget(temp_button)
                 self.displayed_places.append(place)
-                self.root.ids.places_to_visit.text = "Places_to_visit: {}".format(len(place_collection.get_unvisited_places()))
+                self.root.ids.places_to_visit.text = "Places_to_visit: {}".format(len(place_collection.
+                                                                                      get_unvisited_places()))
         return self.displayed_places
 
     def press_entry(self, instance):
@@ -69,7 +70,7 @@ class TravelTrackerApp(App):
         place = instance.place
         if place[IS_VISITED_INDEX] == "n":
             place[IS_VISITED_INDEX] = "v"
-            if place[PRIORITY_INDEX] <=2:
+            if place[PRIORITY_INDEX] <= 2:
                 self.root.ids.is_visted.text = "You visited {}. Great travelling!".format(place[CITY_INDEX])
             else:
                 self.root.ids.is_visted.text = "You visited {}. ".format(place[CITY_INDEX])
@@ -85,7 +86,7 @@ class TravelTrackerApp(App):
             instance.background.color = VISITED_COLOUR
         if place[3] == "n":
             instance.text = str("{} in {}, priority, {})".format(place[CITY_INDEX], place[COUNTRY_INDEX],
-                                                                          place[PRIORITY_INDEX]))
+                                                                 place[PRIORITY_INDEX]))
             instance.background.color = NOT_VISITED_COLOUR
         self.root.ids.places_to_visit.text = ("Places to visit {}".format(len(place_collection.get_unvisited_places)))
 
@@ -106,13 +107,7 @@ class TravelTrackerApp(App):
 
     def add_place(self):
         """add place action"""
-        if not self.get_name():
-            self.root.ids.is_visted.text = "All fields must be completed"
-            return place_collection
-        if not self.get_country():
-            self.root.ids.is_visted.text = "All fields must be completed"
-            return place_collection
-        if not self.get_priority():
+        if not self.get_name() or not self.get_country() or not self.get_priority():
             self.root.ids.is_visted.text = "All fields must be completed"
             return place_collection
         try:
@@ -151,6 +146,7 @@ class TravelTrackerApp(App):
         """Changes which sorting the spinner will be set to."""
         self.root.ids.output_label.text = SPINNER[current_option]
         print("changed to", current_option)
+
 
 if __name__ == '__main__':
     TravelTrackerApp().run()
