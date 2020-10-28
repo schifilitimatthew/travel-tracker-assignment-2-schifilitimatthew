@@ -3,7 +3,7 @@
 
 # Create your PlaceCollection class in this file
 
-from operator import attrgetter
+from operator import itemgetter
 from traveltrackerassignment2schifilitimatthew.assignment_2.place import Place
 
 
@@ -15,9 +15,6 @@ class PlaceCollection:
     def __str__(self):
         return str(self.data)
 
-    def __repr__(self):
-        return "Place[{},{},{},{}]".format(*self.data)
-
     def load_places(self, file):
         """reads data from file for use"""
         with open(file, "r") as in_file:
@@ -26,21 +23,20 @@ class PlaceCollection:
             for line in file:
                 line = line.strip()  # Removing the \n
                 parts = line.split(',')
-                reflection = parts[3] == "n"  # change n or v into Boolean
-                places = Place(parts[0], parts[1], int(parts[2]), reflection)
-                self.data.append(places)
+                parts[2] = int(parts[2])
+                self.data.append(parts)
         return self.data
 
     def save_places(self, file):
         """saves data to file for use"""
         with open(file, 'w') as out_file:
             for places in self.data:
-                print("{},{},{},{}".format(self.data[1], self.data[2], self.data[3], self.data[4]), file=out_file)
+                print("{},{},{},{}".format(*places), file=out_file)
             out_file.close()
 
     def add_place(self, Place):
         """ads data from input for use"""
-        new_place = Place[self.data[1], self.data[2], self.data[3], self.data[4]]
+        new_place = [Place.name, Place.country, Place.priority, "n"]
         self.data.append(new_place)
 
     def get_unvisited_places(self):
@@ -54,13 +50,15 @@ class PlaceCollection:
     def sort(self, criteria):
         """sorts data based on criteria"""
         if criteria == "visited":
-            self.data.sort(key=attrgetter("is_visited"))
+            self.data.sort(key=itemgetter(3))
         if criteria == "priority":
-            self.data.sort(key=attrgetter("priority"))
+            for place in self.data:
+                place[2] = int(place[2])
+            self.data.sort(key=itemgetter(2))
         if criteria == "country":
-            self.data.sort(key=attrgetter("country"))
+            self.data.sort(key=itemgetter(1))
         if criteria == "name":
-            self.data.sort(key=attrgetter("name"))
+            self.data.sort(key=itemgetter(0))
 
     def length(self):
         """determines length of data"""

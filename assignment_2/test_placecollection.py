@@ -3,9 +3,6 @@ from traveltrackerassignment2schifilitimatthew.assignment_2.placecollection impo
 from traveltrackerassignment2schifilitimatthew.assignment_2.place import Place
 
 
-
-
-
 def run_tests():
     """Test PlaceCollection class."""
 
@@ -26,25 +23,25 @@ def run_tests():
     place_collection.add_place(Place("Smithfield", "Australia", 5, False))
     print(place_collection)
 
-    # # Test sorting places
-    # print("Test sorting - priority:")
-    # place_collection.sort("priority")
-    # print(place_collection)
-    #
-    # # Test sorting places
-    # print("Test sorting - country:")
-    # place_collection.sort("country")
-    # print(place_collection)
-    #
-    # # Test sorting places
-    # print("Test sorting - visited:")
-    # place_collection.sort("visited")
-    # print(place_collection)
-    #
-    # # Test sorting places
-    # print("Test sorting - name:")
-    # place_collection.sort("name")
-    # print(place_collection)
+    # Test sorting places
+    print("Test sorting - priority:")
+    place_collection.sort("priority")
+    print(place_collection)
+
+    # Test sorting places
+    print("Test sorting - country:")
+    place_collection.sort("country")
+    print(place_collection)
+
+    # Test sorting places
+    print("Test sorting - visited:")
+    place_collection.sort("visited")
+    print(place_collection)
+
+    # Test sorting places
+    print("Test sorting - name:")
+    place_collection.sort("name")
+    print(place_collection)
 
     # Test saving places
     print("Test Saving places: (check manually)")

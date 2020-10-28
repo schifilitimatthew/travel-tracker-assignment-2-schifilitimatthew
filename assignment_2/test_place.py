@@ -47,6 +47,5 @@ def run_tests():
     print("determine_important_place() - Expected {}. Got {}".format("True", result))
 
 
-
-
 run_tests()
+
