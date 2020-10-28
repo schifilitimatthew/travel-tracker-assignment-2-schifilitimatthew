@@ -1,8 +1,8 @@
 """
-Name:
-Date:
-Brief Project Description:
-GitHub URL:
+Name: Matthew Schifilliti
+Date: 26/10/20
+Brief Project Description: Create the TravelTrackerApp with the use of classes and kivy
+GitHub URL: https://github.com/cp1404-students/travel-tracker-assignment-2-schifilitimatthew
 """
 # Create your main program in this file, using the TravelTrackerApp class
 

@@ -1,4 +1,10 @@
-"""(Incomplete) Tests for Place class."""
+"""
+Name: Matthew Schifilliti
+Date: 22/10/20
+Brief Project Description: Tests for Place class.
+GitHub URL: https://github.com/cp1404-students/travel-tracker-assignment-2-schifilitimatthew
+"""
+
 from traveltrackerassignment2schifilitimatthew.assignment_2.place import Place
 
 
