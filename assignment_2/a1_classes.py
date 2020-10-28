@@ -1,7 +1,8 @@
 """
 Name: Matthew Schifilliti
-Date started: 11/10/2020
-GitHub URL: https://github.com/cp1404-students/travel-tracker-assignment-1-schifilitimatthew
+Date: 22/10/20
+Brief Project Description: Use other classes code in previous TravelTracker.
+GitHub URL: https://github.com/cp1404-students/travel-tracker-assignment-2-schifilitimatthew
 """
 # Copy your first assignment to this file, then update it to use Place class
 # Optionally, you may also use PlaceCollection class

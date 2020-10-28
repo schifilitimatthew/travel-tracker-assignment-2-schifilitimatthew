@@ -1,5 +1,9 @@
-"""..."""
-
+"""
+Name: Matthew Schifilliti
+Date: 11/10/20
+Brief Project Description: Create the Place class.
+GitHub URL: https://github.com/cp1404-students/travel-tracker-assignment-2-schifilitimatthew
+"""
 
 # Create your Place class in this file
 

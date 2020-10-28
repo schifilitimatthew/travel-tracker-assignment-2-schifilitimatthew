@@ -57,4 +57,5 @@ def run_tests():
     result = place_collection.length()
     print("place_collection.length() - Expected {}. Got {}".format("4", result))
 
+
 run_tests()
