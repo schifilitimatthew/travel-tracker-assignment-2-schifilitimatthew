@@ -16,7 +16,7 @@ from traveltrackerassignment2schifilitimatthew.assignment_2.place import Place
 
 place_collection = PlaceCollection()
 VISITED_COLOUR = 0, 0, 0, 1
-NOT_VISITED_COLOUR = 0, 0, 0, 1
+NOT_VISITED_COLOUR = 0, 0, 0, 0
 CITY_INDEX = 0
 COUNTRY_INDEX = 1
 PRIORITY_INDEX = 2
@@ -116,12 +116,12 @@ class TravelTrackerApp(App):
         except ValueError:
             self.root.ids.is_visted.text = "please enter a vaild number"
             return place_collection
-        if priority < 1:
+        if priority > 0:
             self.root.ids.is_visted.text = "Priority must be > 0"
             return place_collection
         else:
             place_collection.add_place(Place(self.get_name(), self.get_country(), priority, "n"))
-            self.displayed_places()
+            self.display_places()
             self.root.ids.input_name.text = ""
             self.root.ids.input_country.text = ""
             self.root.ids.input_priority.text = ""
